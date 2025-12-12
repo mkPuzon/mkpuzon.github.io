@@ -3,488 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madelyn Puzon Portfolio</title>
-    <!-- Added Google Fonts for more interesting typography -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>MKP Portfolio</title>
+    
+    <!-- Google Fonts: Archivo Black for blocky headers, Space Mono for graphic details -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
-        
+        /* --- 1. COLOR VARIABLES (From Palette) --- */
         :root {
-            --primary-color: #1a1c2d;
-            --secondary-color: #d2a551;
-            --accent-color: #292c3d;
-            --text-color: #ecf0f3;
-            --light-color: #3d4052;
+            /* Palette Citations: Reseda Green, Moss Green, Sage, Khaki, Chamoisee */
+            --col-reseda: #6D7361;  /* Dark Green - Text & Footers */
+            --col-moss:   #989F7E;  /* Mid Green - Accents */
+            --col-sage:   #C0C7AB;  /* Light Green - Backgrounds */
+            --col-khaki:  #B6AD90;  /* Beige - Alt Backgrounds */
+            --col-cham:   #AC855E;  /* Brown - Buttons/Highlights */
+            
+            --col-light:  #F2F4EF;  /* Almost white (derived from Sage) for readability */
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
+        /* --- 2. RESET & BASICS --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            background-color: var(--col-light);
+            color: var(--col-reseda);
+            font-family: 'Inter', sans-serif; /* Clean reading font */
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: #1d1b18;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Raleway', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+
+        /* --- 3. TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.05em; /* Tight tracking for that "block" look */
         }
-        
-        header {
-            background-color: var(--light-color);
-            color: #e6dad2;
-            padding: 2rem 0;
-            text-align: center;
+
+        .graphic-sub {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--col-cham);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
         }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .container {
-            width: 85%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
+        /* --- 4. NAVIGATION --- */
         nav {
-            background-color: var(--accent-color);
-            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            background: var(--col-reseda);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
         }
-        
+
+        nav .logo {
+            color: var(--col-sage);
+            font-family: 'Archivo Black', sans-serif;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
         nav ul {
             display: flex;
-            justify-content: center;
             list-style: none;
+            gap: 2rem;
         }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            color: #e6dad2;
+
+        nav a {
+            color: var(--col-sage);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        
-        section {
-            padding: 3rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--text-color);
-            font-size: 2rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            color: #e6dad2;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            color: #e6dad2;
-        }
-        
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background-color: var(--light-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary-color);
-            font-size: 80px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            overflow: hidden; /* Added to maintain circular shape with image */
-        }
-
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Makes the image cover the container appropriately */
-            display: block;
-        }
-                
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background-color: var(--light-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .project-img {
-            height: 180px;
-            background-color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #e6dad2;
-            font-size: 30px;
-            overflow: hidden; /* Added to contain the image */
-        }
-
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Makes the image cover the container appropriately */
-            display: block;
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-        
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2rem;
-            justify-content: center;
-        }
-        
-        .skill-tag {
-            background-color: var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
             font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
         }
         
-        .skill-tag:hover {
-            transform: scale(1.10);
-            background-color: var(--light-color);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #e6dad2;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: #1d1b18;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .social-links a {
-            color: var(--light-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #1d1b18;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .social-section {
-            padding: 3rem 0;
-            background-color: var(--light-color);
-            text-align: center;
-        }
-        
-        .social-container {
-            max-width: 700px;
+        nav a:hover { color: var(--col-cham); }
+
+        /* --- 5. SECTIONS --- */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
-        
-        .contact-info {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+        /* HERO SECTION */
+        .hero {
+            background-color: var(--col-sage); /* Sage background */
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            border-bottom: 10px solid var(--col-moss);
+            max-width: 100%; /* Full width for hero */
+            padding: 0 10%; /* Inner padding */
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem); /* Responsive giant text */
+            color: var(--col-reseda);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--col-cham); /* Chamoisee button */
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-weight: bold;
+            border: 3px solid var(--col-cham);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--col-cham);
+        }
+
+        /* WORK EXPERIENCE (Timeline vibe) */
+        .experience-item {
+            border-left: 5px solid var(--col-moss);
+            padding-left: 2rem;
+            margin-bottom: 3rem;
         }
         
-        .contact-info p {
-            margin: 0.5rem 0;
+        .experience-item h3 { font-size: 1.8rem; margin-bottom: 0.2rem; }
+        .experience-item .date { font-family: 'Space Mono', monospace; color: var(--col-khaki); font-weight: bold;}
+
+        /* PROJECT GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-        
-        .contact-info i {
+
+        .card {
+            background: #fff;
+            border: 4px solid var(--col-khaki); /* Thick borders for graphic look */
+            padding: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--col-cham);
+        }
+
+        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .tags { margin-top: 1rem; }
+        .tag {
+            background: var(--col-sage);
+            padding: 0.2rem 0.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
             margin-right: 0.5rem;
-            color: var(--primary-color);
         }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 5px 0;
-            }
-            
-            .social-links {
-                gap: 1rem;
-            }
+
+        .repo-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--col-reseda);
+            text-decoration: none;
+            border-bottom: 2px solid var(--col-cham);
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .repo-link:hover {
+            color: var(--col-cham);
+            border-color: var(--col-reseda);
+        }
+
+        /* OTHER WORK (List style) */
+        .other-work-list li {
+            list-style: none;
+            border-bottom: 2px solid var(--col-sage);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .other-work-list a {
+            color: var(--col-reseda);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .other-work-list a:hover { color: var(--col-cham); }
+
+        /* FOOTER */
+        footer {
+            background: var(--col-reseda);
+            color: var(--col-sage);
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            nav { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Madelyn Puzon</h1>
-            <p>Machine Learning Engineer & Researcher | Colby College</p>
-        </div>
-    </header>
-    
+
+    <!-- NAVIGATION -->
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#work">Work Experience</a></li>
-                <li><a href="#connect">Connect</a></li>
-            </ul>
-        </div>
+        <a href="#" class="logo">YOUR NAME.</a>
+        <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#experience">WORK</a></li>
+            <li><a href="#projects">CODE</a></li>
+            <li><a href="#other">OTHER</a></li>
+        </ul>
     </nav>
-    
-    <section id="about" style="background-color: var(--primary-color);">
-        <div class="container">
-            <!-- <h2 class="section-title">About Me</h2> -->
-            <div class="about-content">
-                <div class="profile-img">
-                    <img src="assets/pfp1.jpeg" alt="Profile photo">
+
+    <!-- HERO HEADER -->
+    <header class="hero">
+        <span class="graphic-sub">ML Engineer & Creative</span>
+        <h1>Building<br>Robust<br>Solutions.</h1>
+        <a href="#projects" class="btn">VIEW PROJECTS</a>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <span class="graphic-sub">01. Who I Am</span>
+        <h2>About Me</h2>
+        <p>I am a Computer Science and Philosophy student specializing in designing, training, and deploying machine learning systems. Currently looking for opportunities career to apply my skills in deep learning, RAG, and fine-tuning to develop specialized and robust AI systems.</p>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section id="experience" style="background-color: #fff;">
+        <span class="graphic-sub">02. Where I've worked</span>
+        <h2>Experience</h2>
+        <br>
+        
+        <div class="experience-item">
+            <h3>DavisAI Research Assistant & Tutor</h3>
+            <span class="date">Oct 2024 — PRESENT</span>
+            <p>Engineered private AI solutions through fine-tuning and RAG, optimizing open-source LLMs for accurate content filtering in applied research settings, improving accuracy by 45%.</p>
+            <p>Conducted and presented independent research on embedding algorithms, retrieval augmented generation, and local fine-tuning methods.</p>
+            <p>Served as a technical consultant to cross-disciplinary partners (Economics, Philosophy, CS), translating complex technical capabilities into practical research applications and policy guidelines.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>OWLab Research Assistant</h3>
+            <span class="date">May 2024 — Sep 2025</span>
+            <p>Architected and trained deep learning models (DCNNs, ARTFLOW) in TensorFlow to model primate visual mechanisms, identifying key computational trends that outperformed baseline models by 25%.</p>
+            <p>Extended a custom library built on Tensorflow (>10,000 lines) to process and train custom ML models on sequential inputs.</p>
+            <p>Designed, evaluated, and conducted Unity-based (C#) perception experiments with 50+ participants, producing datasets that advanced research of neural models of visual perception and navigation.</p>
+        </div>
+    </section>
+
+    <!-- CODING PROJECTS -->
+    <section id="projects">
+        <span class="graphic-sub">03. What I've Built</span>
+        <h2>Coding Projects</h2>
+        <br>
+        <div class="grid">
+            <!-- Project 1 -->
+            <div class="card">
+                <h3>Self-Updating CS Research Tool</h3>
+                <p>A self-updating glossary built using Python and PostgreSQL to scrape and analyze research papers.</p>
+                <div class="tags">
+                    <span class="tag">PYTHON</span>
+                    <span class="tag">POSTGRESQL</span>
+                    <span class="tag">DATA PIPELINE</span>
+                    <span class="tag">LLM</span>
                 </div>
-                <div class="about-text">
-                    <p>Hi there! I'm Maddie, a computer science and philosophy student specializing in AI research with expertise in neural network architectures, biological vision modeling, and LLM optimization with 2+ years of research experience. </p>
-                    <br>
-                    <p>With strong technical skills in Python, TensorFlow, and various AI methodologies including CNNs, LLMs, and RAG, I combine technical work with philosophical inquiry to approach AI development ethically and thoughtfully. I'm passionate about creating AI solutions that respect privacy while delivering robust results. I'm currently seeking opportunities in machine learning engineering, software engineering, or other related fields.</p>
+                <a href="https://github.com/mkPuzon/AURA" class="repo-link">VIEW REPO &rarr;</a>
+            </div>
+            <!-- Project 2 -->
+            <div class="card">
+                <h3>Sentiment Analysis Microservice</h3>
+                <p>A production-ready microservice for real-time sentiment analysis, built with FastAPI, Hugging Face Transformers, and PostgreSQL.</p>
+                <div class="tags">
+                    <span class="tag">NLP</span>
+                    <span class="tag">FASTAPI</span>
+                    <span class="tag">POSTGRESQL</span>
+                    <span class="tag">HUGGING FACE</span>
+                    <span class="tag">DOCKER</span>
                 </div>
+                <a href="https://github.com/mkPuzon/sentiment-analysis-microservice" class="repo-link">VIEW REPO &rarr;</a>
+            </div>
+            <!-- Project 3 -->
+            <div class="card">
+                <h3>PLACEHOLDER</h3>
+                <p>PLACEHOLDER</p>
+                <div class="tags">
+                    <span class="tag">PLACEHOLDER</span>
+                    <span class="tag">PLACEHOLDER</span>
+                </div>
+                <a href="https://github.com/mkPuzon/" class="repo-link">VIEW REPO &rarr;</a>
             </div>
         </div>
     </section>
 
-    <section id="skills" style="background-color: var(--secondary-color);"">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-list">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Machine Learning</span>
-                <span class="skill-tag">Tensorflow</span>
-                <span class="skill-tag">FastAPI</span>
-                <span class="skill-tag">Neural Network Design</span>
-                <span class="skill-tag">Deep Neural Networks (DCNNs)</span>
-                <span class="skill-tag">LLMs</span>
-                <span class="skill-tag">Fine-tuning</span>
-                <span class="skill-tag">RAG Pipelines</span>
-                <span class="skill-tag">Git/Github</span>
-                <span class="skill-tag">WSL</span>
-                <span class="skill-tag">Data Structures & Algorithms</span>
-                <span class="skill-tag">Statistical Analysis</span>
-            </div>
-        </div>
-    </section>
-    
-    <section id="projects" style="background-color: var(--light-color);">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/p2.jpg" alt="Guardian model thumbnail">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Fine-Tuned Guardian Model with End-to-End API</h3>
-                        <p>Developed and deployed a full-stack machine learning application to perform real-time sentiment analysis. This project involved wrapping a fine-tuned DistilBERT model , which achieved 95% accuracy, into a REST API using FastAPI. The entire application was containerized with Docker and deployed to the cloud, demonstrating a complete model-to-production workflow.
-                            <li><b>Tech Stack</b>: Python, PyTorch, Transformers, FastAPI, Docker, Hugging Face Spaces.</li>
-                            <li><b>Skills</b>: End-to-End MLOps, API Development, Model Deployment, Containerization.</li>
-                        </p>
-                            <a href="https://github.com/mkPuzon/guardian-models" class="btn" style="margin-top: 1rem;">View Repo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/auraLogo.png" alt="Project thumbnail">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">A.U.R.A.</h3>
-                        <p> Designed and developed the backend for an AI powered self-updating glossary from cutting edge research on artificial intelligence: AI Understanding, Research, and Analytic glossary for AI education (AURA). The AURA system scrapes research papers, extracts key words and concepts, defines them within the contex of the paper, and integrates them into a PostgreSQL database.
-                            <li><b>Tech Stack</b>: Python, PostgreSQL.</li>
-                            <li><b>Skills</b>: Modular Programming, Data Cleaning, Database Design.</li>
-                        </p>
-                        <a href="https://github.com/mkPuzon/AURA" class="btn" style="margin-top: 1rem;">View Repo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/research_su25.png" alt="Project thumbnail">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Deep Recurrent Image Computable Neural Network Design and Testing Library</h3>
-                        <p>
-                            <li>Collaborated closely with another student to design deep neural networks using a custom TensorFlow/Keras-based library.</li>
-                            <li>Leveraged modular design to rapidly prototype, train, and evaluate deep neural networks.</li>
-                            <li>Implemented recurrence and measured its impact on accuracy and neural alignment metrics.</li>
-                        </p>
-                        <a href="#projects" class="btn" style="margin-top: 1rem;">[Paper in the works]</a>
-                    </div>
-                </div>
-            </div>
+    <!-- OTHER WORK -->
+    <section id="other">
+        <span class="graphic-sub">04. The Extras</span>
+        <h2>Other Info</h2>
+        <p>As a student leader, I've been interviewed for a couple articles about Colby's Institute for Artificial Intelligence; check them out <a href="https://www.govtech.com/education/higher-ed/colby-college-builds-ai-literacy-with-portal-for-comparing-chatbots">here</a> and <a href="https://news.colby.edu/story/a-lively-conversation-about-ai/">here</a>.</p>
+        <p>When I'm not coding I enjoy photography, going for runs, and reading modern philosophy.</p>
+        <!-- <ul class="other-work-list">
+            <li>
+                <span>Technical Writing (Blog)</span>
+                <a href="#">Read Article &rarr;</a>
+            </li>
+            <li>
+                <span>Photography Portfolio</span>
+                <a href="#">View Photos &rarr;</a>
+            </li>
+            <li>
+                <span>Open Source Contributions</span>
+                <a href="#">View GitHub &rarr;</a>
+            </li>
+        </ul> -->
     </section>
 
-    <section id="work" style="background-color: var(--primary-color);">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/research.png" alt="Project thumbnail">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">DavisAI Research Assistant & Tutor</h3>
-                        <p>
-                            <li>Designed and prototyped an self updating glossary system for institutional use.</li>
-                            <li>Engineered private AI solutions by training and evaluating open-source LLMs using RAG and fine-tuning, optimizing model performance for accurate and fair content filtering in educational research settings.</li>
-                            <li>Assisted in developing platforms to ensure equitable access to AI tools, fostering proficiency and ethical usage across diverse audiences.</li>
-                        </p>
-                        <a href="https://davisinstituteai.colby.edu/about/" class="btn" style="margin-top: 1rem;">Learn more about DavisAI</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/owlabLogo.png" alt="OWLab Logo">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">OWLab Research Assistant</h3>
-                        <p>
-                            <li>Assisted in the development of an AI model to predict heading direction from optic flow fields with rotational components.</li>
-                            <li>Conducted research on biologically inspired algorithms, with potential applications in real-time navigation and motion perception.</li>
-                            <li>Fine tuned experiment parameters and debugged data collection experiments in Matlab.</li>
-                        </p>
-                        <a href="https://sites.google.com/colby.edu/owlab" class="btn" style="margin-top: 1rem;">Learn more about the OWLab</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="assets/colbyLogo.png" alt="Colby Logo">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Computer Science Department Teaching Assistant</h3>
-                        <p>
-                            <li>Provided hands-on debugging support, helping students troubleshoot software and resolve programming errors.</li>
-                            <li>Analyzed student submissions to identify common mistakes, allowing instructors to refine course materials.</li>
-                            <li>Proposed curriculum improvements based on observed trends, enhancing student learning outcomes.</li>
-                        </p>
-                            <a href="https://www.cs.colby.edu/" class="btn" style="margin-top: 1rem;">Colby CS department</a>
-                    </div>
-                </div>
-            </div>
-    </section>
-    
-    <section id="connect" class="social-section">
-        <div class="container social-container">
-            <h2 class="section-title">Get In Touch</h2>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/madelyn-puzon/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/mkPuzon" title="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-            
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> madelynkpuzon@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Waterville, Maine</p>
-            </div>
-        </div>
-    </section>
-    
+    <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Madelyn Puzon. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 Madelyn Puzon </p>
     </footer>
+
 </body>
 </html>

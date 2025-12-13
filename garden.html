@@ -1,0 +1,132 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Garden</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --col-reseda: #6D7361;
+            --col-moss:   #989F7E;
+            --col-sage:   #C0C7AB;
+            --col-khaki:  #B6AD90;
+            --col-cham:   #AC855E;
+            --col-light:  #F2F4EF;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--col-light);
+            color: var(--col-reseda);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding-bottom: 4rem;
+        }
+
+        /* Typography */
+        h1, h2 {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--col-reseda); }
+        h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--col-moss); }
+
+        a { color: var(--col-cham); text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+
+        /* Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            font-family: 'Space Mono', monospace;
+            display: inline-block;
+            margin-bottom: 3rem;
+            color: var(--col-reseda);
+            border-bottom: 1px solid var(--col-reseda);
+        }
+
+        .intro {
+            border-left: 5px solid var(--col-cham);
+            padding-left: 1.5rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Link Lists */
+        .link-group {
+            background: #fff;
+            border: 4px solid var(--col-khaki);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .link-group ul {
+            list-style: none;
+        }
+
+        .link-group li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .link-group li::before {
+            content: "→";
+            color: var(--col-cham);
+            font-weight: bold;
+            margin-right: 10px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; BACK TO HOME</a>
+
+        <h1>Digital Garden</h1>
+        
+        <div class="intro">
+            <p>This is my collection of tools, articles, and websites I find useful or insightful. This page is pretty informal and is a constant work in progress. I'm not a big fan of social media algorithms telling me what to pay attention to so this is my solution.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="link-group">
+            <h2>Useful Websites that Don't Suck</h2>
+            <ul>
+                <li><a href="https://oa.mg/">OA.mgr</a> <span class="note">- a modern academic research engine.</span></li>
+            </ul>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="link-group">
+            <h2>Actually Productive Self Improvement YT Channels</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/@NewelOfKnowledge">Newel of Knowledge</a> <span class="note">- Presents information in a direct manner, leveraging practical psychology and philosophy to help you improve your mental health and social skills. Simple video style with a whiteboard, Lewis talking, and minimal cuts.</span></li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* --- 1. COLOR VARIABLES --- */
+:root {
+    /* Palette Citations: Reseda Green, Moss Green, Sage, Khaki, Chamoisee */
+    --col-reseda: #6D7361;  /* Dark Green - Text & Footers */
+    --col-moss:   #989F7E;  /* Mid Green - Accents */
+    --col-sage:   #C0C7AB;  /* Light Green - Backgrounds */
+    --col-khaki:  #B6AD90;  /* Beige - Alt Backgrounds */
+    --col-cham:   #AC855E;  /* Brown - Buttons/Highlights */
+    
+    --col-light:  #F2F4EF;  /* Almost white (derived from Sage) for readability */
+}
+
+/* --- 2. RESET & BASICS --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--col-light);
+    color: var(--col-reseda);
+    font-family: 'Inter', sans-serif; /* Clean reading font */
+    line-height: 1.6;
+}
+
+/* --- 3. TYPOGRAPHY --- */
+h1, h2, h3 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.05em; /* Tight tracking for that "block" look */
+}
+
+a { 
+    color: var(--col-cham); 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+a:hover { 
+    color: var(--col-reseda); 
+}
+
+/* Utility Class for Subtitles */
+.graphic-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--col-cham);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* --- 4. NAVIGATION (For Main Site) --- */
+nav {
+    position: sticky;
+    top: 0;
+    background: var(--col-reseda);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+nav .logo {
+    color: var(--col-sage);
+    font-family: 'Archivo Black', sans-serif;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--col-sage);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+nav a:hover { color: var(--col-cham); }
+
+/* --- 5. SECTIONS (Shared) --- */
+section {
+    padding: 2rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- 6. INDEX PAGE SPECIFICS --- */
+
+/* Hero */
+.hero {
+    background-color: var(--col-sage);
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-bottom: 10px solid var(--col-moss);
+    max-width: 100%;
+    padding: 0 10%;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: var(--col-reseda);
+    line-height: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--col-cham);
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+    border: 3px solid var(--col-cham);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--col-cham);
+}
+
+/* Experience */
+.experience-item {
+    border-left: 5px solid var(--col-moss);
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+}
+
+.experience-item h3 { font-size: 1.8rem; margin-bottom: 0.2rem; }
+.experience-item .date { font-family: 'Space Mono', monospace; color: var(--col-khaki); font-weight: bold;}
+
+/* Project Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    border: 4px solid var(--col-khaki);
+    padding: 2rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--col-cham);
+}
+
+.card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+.tags { margin-top: 1rem; margin-bottom: 1.5rem; }
+.tag {
+    background: var(--col-sage);
+    padding: 0.2rem 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    margin-right: 0.5rem;
+}
+
+.repo-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--col-reseda);
+    text-decoration: none;
+    border-bottom: 2px solid var(--col-cham);
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.repo-link:hover {
+    color: var(--col-cham);
+    border-color: var(--col-reseda);
+}
+
+/* Other Work List */
+.other-work-list li {
+    list-style: none;
+    border-bottom: 2px solid var(--col-sage);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.other-work-list a {
+    color: var(--col-reseda);
+}
+.other-work-list a:hover { color: var(--col-cham); }
+
+/* Footer */
+footer {
+    background: var(--col-reseda);
+    color: var(--col-sage);
+    text-align: center;
+    padding: 3rem;
+    margin-top: 4rem;
+    font-family: 'Space Mono', monospace;
+}
+
+/* --- 7. IN PROGRESS PAGE SPECIFICS --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Specific headers for internal pages */
+.page-title { font-size: 3rem; margin-bottom: 1rem; color: var(--col-reseda); }
+.section-title { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--col-moss); }
+
+.back-link {
+    font-family: 'Space Mono', monospace;
+    display: inline-block;
+    margin-bottom: 3rem;
+    color: var(--col-reseda);
+    border-bottom: 1px solid var(--col-reseda);
+}
+
+.intro {
+    border-left: 5px solid var(--col-cham);
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.link-group {
+    background: #fff;
+    border: 4px solid var(--col-khaki);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.link-group ul {
+    list-style: none;
+}
+
+.link-group li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.link-group li::before {
+    content: "→";
+    color: var(--col-cham);
+    font-weight: bold;
+    margin-right: 10px;
+    font-family: 'Space Mono', monospace;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 0.5rem;
+}
+
+/* --- 8. MEDIA QUERIES --- */
+@media (max-width: 600px) {
+    nav { flex-direction: column; gap: 1rem; }
+    nav ul { gap: 1rem; }
+    .hero h1 { font-size: 2.5rem; }
+}

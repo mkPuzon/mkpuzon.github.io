@@ -1,275 +1,278 @@
-/* --- 1. COLOR VARIABLES --- */
+/* --- VARIABLES --- */
 :root {
-    /* Palette Citations: Reseda Green, Moss Green, Sage, Khaki, Chamoisee */
-    --col-reseda: #6D7361;  /* Dark Green - Text & Footers */
-    --col-moss:   #989F7E;  /* Mid Green - Accents */
-    --col-sage:   #C0C7AB;  /* Light Green - Backgrounds */
-    --col-khaki:  #B6AD90;  /* Beige - Alt Backgrounds */
-    --col-cham:   #AC855E;  /* Brown - Buttons/Highlights */
+    --bg-color: #F3EFE0; 
+    --footer-bg: #E6DEC8; 
+    --text-main: #1A1A1A; 
+    --link: #D4A017;
     
-    --col-light:  #F2F4EF;  /* Almost white (derived from Sage) for readability */
+    /* --- COLOR PALETTE --- */
+    /* 1. Projects (Pop color: Burnt Orange) */
+    --color-project: #913520; 
+    --text-project: #F3EFE0;
+
+    /* 2. Work Experience (Strong Pop: Black/Charcoal) */
+    --color-work: #1A1A1A;
+    --text-work: #F3EFE0;
+
+    /* 3. About Me (Subtle: Stone Grey) */
+    --color-about: #D6D1C2;
+    --text-about: #1A1A1A;
+
+    /* 4. Extras (Subtle: Darker Cream) */
+    --color-extra: #EAE5D3;
+    --text-extra: #1A1A1A;
+    
+    --font-head: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --radius: 16px; /* Slightly tighter radius */
+    --gap: 12px;    /* TIGHTER GAP (was 16px) */
+}
+/* --- GRID SIZING UTILITIES --- */
+@media (min-width: 600px) {
+    
+    /* WIDTHS (Columns) */
+    .w-1 { grid-column: span 1; }
+    .w-2 { grid-column: span 2; }
+    .w-3 { grid-column: span 3; }
+    .w-4 { grid-column: span 4; }
+    .w-5 { grid-column: span 5; }
+    .w-6 { grid-column: span 6; }
+    .w-7 { grid-column: span 7; }
+    .w-8 { grid-column: span 8; }
+
+    /* HEIGHTS (Rows) */
+    .h-1 { grid-row: span 1; }
+    .h-2 { grid-row: span 2; }
+    .h-3 { grid-row: span 3; }
+    .h-4 { grid-row: span 4; }
+    .h-5 { grid-row: span 5; }
+    .h-6 { grid-row: span 6; }
+    .h-7 { grid-row: span 7; }
+    .h-8 { grid-row: span 8; }
 }
 
-/* --- 2. RESET & BASICS --- */
+/* --- RESET & BASE --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background-color: var(--col-light);
-    color: var(--col-reseda);
-    font-family: 'Inter', sans-serif; /* Clean reading font */
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    padding: 0; 
+    line-height: 1.4; /* Slightly tighter leading */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* --- 3. TYPOGRAPHY --- */
-h1, h2, h3 {
-    font-family: 'Archivo Black', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: -0.05em; /* Tight tracking for that "block" look */
+/* Update your 'a' tag styles */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
 }
 
-a { 
-    color: var(--col-cham); 
-    text-decoration: none; 
-    font-weight: bold; 
+/* Make links pop with yellow on hover */
+a:hover {
+    color: var(--link);
 }
 
-a:hover { 
-    color: var(--col-reseda); 
+p a {
+    color: var(--link);
+    /* text-decoration: underline; */
+    text-underline-offset: 4px;
 }
 
-/* Utility Class for Subtitles */
-.graphic-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 1.1rem;
-    color: var(--col-cham);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-    display: block;
-}
+.navbar, .bento-grid { padding-left: 20px; padding-right: 20px; }
+img { width: 100%; height: 100%; object-fit: cover; display: block; }
+a { text-decoration: none; color: inherit; transition: opacity 0.2s ease; }
 
-/* --- 4. NAVIGATION (For Main Site) --- */
-nav {
+/* --- NAVBAR --- */
+.navbar {
+/* 1. STICKY POSITIONING */
     position: sticky;
     top: 0;
-    background: var(--col-reseda);
-    padding: 1rem 2rem;
+    z-index: 1000; /* Ensures it floats ABOVE the cards */
+
+    /* 2. BACKGROUND & BLUR (Glassmorphism effect) */
+    background-color: rgba(243, 239, 224, 0.65); /* Uses your cream color with slight transparency */
+    backdrop-filter: blur(12px); /* Blurs the content scrolling behind it */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Subtle line to separate from content */
+
+    /* 3. LAYOUT (Existing) */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    
+    /* 4. SIZING ADJUSTMENTS */
+    /* I reduced the vertical padding slightly so the bar isn't too tall when stuck */
+    padding-top: 15px; 
+    padding-bottom: 15px;
+    
+    max-width: 100%; /* Changed from fixed width to 100% to span full screen */
+    margin: 0 auto 20px auto; /* Added bottom margin to push content away slightly */
+    width: 100%;
+}
+.logo { font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -1px; color: var(--color-project);}
+.nav-links a { margin-left: 20px; font-weight: 500; font-size: 0.9rem; }
+.nav-links .btn-primary { background: var(--text-main); color: var(--bg-color); padding: 8px 18px; border-radius: 50px; }
+
+/* --- BENTO GRID LAYOUT --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 80px; 
+    grid-auto-columns: 80px;
+    gap: var(--gap);
+    max-width: 1240px;
+    margin: 0 auto 50px auto;
+    width: 100%;
 }
 
-nav .logo {
-    color: var(--col-sage);
-    font-family: 'Archivo Black', sans-serif;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-nav ul {
+/* --- GENERIC CARD STYLING --- */
+.card {
+    border-radius: var(--radius);
+    padding: 20px; /* TIGHTER PADDING (was 24px) */
     display: flex;
-    list-style: none;
-    gap: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+.card:hover { transform: translateY(-4px); }
+
+/* --- CATEGORY COLOR CODING --- */
+
+/* 1. PROJECTS (Orange) */
+.cat-project {
+    background-color: var(--color-project);
+    color: var(--text-project);
+}
+.cat-project .tags span { border-color: rgba(255,255,255,0.4); }
+
+/* 2. WORK EXPERIENCE (Black) */
+.cat-work {
+    background-color: var(--color-work);
+    color: var(--text-work);
 }
 
-nav a {
-    color: var(--col-sage);
-    text-decoration: none;
-    font-family: 'Space Mono', monospace;
-    font-weight: 700;
-    font-size: 0.9rem;
+/* 3. ABOUT ME (Stone) */
+.cat-about {
+    background-color: var(--color-about);
+    color: var(--text-about);
 }
 
-nav a:hover { color: var(--col-cham); }
-
-/* --- 5. SECTIONS (Shared) --- */
-section {
-    padding: 2rem 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
+/* 4. EXTRAS (Cream) */
+.cat-extra {
+    background-color: var(--color-extra);
+    color: var(--text-extra);
 }
 
-/* --- 6. INDEX PAGE SPECIFICS --- */
+/* --- CONTENT STYLES --- */
+.hero h1 {
+    font-family: var(--font-head);
+    font-size: 2.2rem; /* Adjusted for tighter space */
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
 
-/* Hero */
-.hero {
-    background-color: var(--col-sage);
-    min-height: 80vh;
+.status-pill {
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.6);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    width: fit-content;
+    color: #000;
+}
+.dot { height: 8px; width: 8px; background-color: #2ecc71; border-radius: 50%; margin-right: 8px; }
+
+.photo-card { padding: 0; }
+
+.focus-card h3 { opacity: 0.6; font-size: 0.85rem; margin-bottom: 8px;}
+.focus-card .mini-icon { font-size: 1.8rem; margin-top: auto; align-self: flex-end;}
+
+/* Project Specifics */
+.project-large { padding: 0; } /* Remove padding for image to touch edges */
+.cat-project .card-image-wrapper, 
+.cat-work .card-image-wrapper {
+    /* Layout */
+    height: 55%; 
+    width: 100%; 
+    margin-bottom: 15px; /* Adds space between image and text */
+    
+    /* Decoration */
+    background: #000;
+    border-radius: 12px; /* The rounded corners */
+    overflow: hidden;    /* Clips the image */
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.cat-project .card-content {
+    padding: 20px;
+    height: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    border-bottom: 10px solid var(--col-moss);
-    max-width: 100%;
-    padding: 0 10%;
 }
+.cat-project h2 { font-family: var(--font-head); line-height: 1.1; margin-bottom: 6px; }
+.cat-project p { font-size: 0.9rem; opacity: 0.9; }
 
-.hero h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    color: var(--col-reseda);
-    line-height: 0.9;
-    margin-bottom: 2rem;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    background-color: var(--col-cham);
-    color: #fff;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-family: 'Space Mono', monospace;
-    font-weight: bold;
-    border: 3px solid var(--col-cham);
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: transparent;
-    color: var(--col-cham);
-}
-
-/* Experience */
-.experience-item {
-    border-left: 5px solid var(--col-moss);
-    padding-left: 2rem;
-    margin-bottom: 3rem;
-}
-
-.experience-item h3 { font-size: 1.8rem; margin-bottom: 0.2rem; }
-.experience-item .date { font-family: 'Space Mono', monospace; color: var(--col-khaki); font-weight: bold;}
-
-/* Project Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.card {
-    background: #fff;
-    border: 4px solid var(--col-khaki);
-    padding: 2rem;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--col-cham);
-}
-
-.card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-
-.tags { margin-top: 1rem; margin-bottom: 1.5rem; }
-.tag {
-    background: var(--col-sage);
-    padding: 0.2rem 0.5rem;
-    font-family: 'Space Mono', monospace;
+/* Tags */
+.tags { margin-bottom: 10px; }
+.tags span {
     font-size: 0.7rem;
-    margin-right: 0.5rem;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    opacity: 0.8;
 }
 
-.repo-link {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--col-reseda);
-    text-decoration: none;
-    border-bottom: 2px solid var(--col-cham);
-    font-weight: 700;
-    transition: color 0.3s;
-}
+/* Work Experience Header */
+.work-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; opacity: 0.7; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;}
+.cat-work h2 { font-family: var(--font-head); font-size: 1.8rem; margin-bottom: 8px; }
 
-.repo-link:hover {
-    color: var(--col-cham);
-    border-color: var(--col-reseda);
-}
+/* Skills */
+.skill-list { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-list li { background: var(--color-project); color: var(--text-work); padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.8rem; }
 
-/* Other Work List */
-.other-work-list li {
-    list-style: none;
-    border-bottom: 2px solid var(--col-sage);
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.other-work-list a {
-    color: var(--col-reseda);
-}
-.other-work-list a:hover { color: var(--col-cham); }
-
-/* Footer */
-footer {
-    background: var(--col-reseda);
-    color: var(--col-sage);
+/* --- FOOTER --- */
+.site-footer {
+    background-color: var(--footer-bg);
+    padding: 40px 20px; /* Reduced vertical padding */
+    margin-top: auto;
     text-align: center;
-    padding: 3rem;
-    margin-top: 4rem;
-    font-family: 'Space Mono', monospace;
 }
-
-/* --- 7. IN PROGRESS PAGE SPECIFICS --- */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+.footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.site-footer h3 { font-family: var(--font-head); font-size: 1.8rem; color: var(--text-main); }
+.social-icons { display: flex; gap: 16px; }
+.social-icons a {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; /* Slightly smaller icons */
+    border-radius: 50%;
+    background: var(--text-main);
+    color: var(--bg-color);
+    transition: transform 0.2s ease, background 0.2s ease;
 }
+.social-icons a:hover { transform: scale(1.1); background: #000; }
+.copyright { opacity: 0.5; font-size: 0.8rem; }
 
-/* Specific headers for internal pages */
-.page-title { font-size: 3rem; margin-bottom: 1rem; color: var(--col-reseda); }
-.section-title { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--col-moss); }
-
-.back-link {
-    font-family: 'Space Mono', monospace;
-    display: inline-block;
-    margin-bottom: 3rem;
-    color: var(--col-reseda);
-    border-bottom: 1px solid var(--col-reseda);
+/* --- RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-.intro {
-    border-left: 5px solid var(--col-cham);
-    padding-left: 1.5rem;
-    margin-bottom: 3rem;
-    font-style: italic;
-    font-size: 1.1rem;
-}
-
-.link-group {
-    background: #fff;
-    border: 4px solid var(--col-khaki);
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-.link-group ul {
-    list-style: none;
-}
-
-.link-group li {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: baseline;
-}
-
-.link-group li::before {
-    content: "→";
-    color: var(--col-cham);
-    font-weight: bold;
-    margin-right: 10px;
-    font-family: 'Space Mono', monospace;
-}
-
-.note {
-    font-size: 0.9rem;
-    color: #666;
-    margin-left: 0.5rem;
-}
-
-/* --- 8. MEDIA QUERIES --- */
 @media (max-width: 600px) {
-    nav { flex-direction: column; gap: 1rem; }
-    nav ul { gap: 1rem; }
-    .hero h1 { font-size: 2.5rem; }
+    .bento-grid { display: flex; flex-direction: column; }
+    .card { min-height: 200px; }
+    .hero h1 { font-size: 2rem; }
 }

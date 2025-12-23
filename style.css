@@ -276,3 +276,105 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s ease; }
     .card { min-height: 200px; }
     .hero h1 { font-size: 2rem; }
 }
+
+/* --- DUAL ROW GALLERY --- */
+
+/* 1. The Main Wrapper */
+.gallery-wrapper {
+    width: 100%;
+    /* No height defined here, it grows with content */
+    overflow: hidden; 
+    background: var(--color-extra);
+    border-radius: var(--radius);
+    padding: 20px 0; /* Add vertical breathing room */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space BETWEEN the two rows */
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* 2. The Tracks */
+.gallery-track {
+    display: flex;
+    gap: var(--gap);
+    width: max-content; 
+    /* We remove the animation here and put it on specific classes below */
+}
+
+/* 3. Animation Directions */
+.scroll-left {
+    animation: scroll-left 35s linear infinite;
+}
+
+.scroll-right {
+    animation: scroll-right 35s linear infinite;
+}
+
+/* Pause EITHER row on hover */
+.gallery-track:hover {
+    animation-play-state: paused;
+}
+
+/* --- KEYFRAMES --- */
+
+/* --- UPDATED KEYFRAMES --- */
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exactly one set length to the left */
+        /* With 3 sets, one set is 100% / 3 = 33.333% */
+        transform: translateX(-33.333%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        /* Start at -33.33% (Showing the middle set) */
+        transform: translateX(-33.333%);
+    }
+    100% {
+        /* Move right to 0 (Showing the first set) */
+        transform: translateX(0);
+    }
+}
+
+/* --- CARD & TOOLTIP STYLES (Same as before) --- */
+.art-card {
+    position: relative;
+    width: 280px; /* Slightly smaller to fit 2 rows comfortably */
+    height: 350px; 
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.art-card:hover { transform: scale(0.98); }
+.art-card img { width: 100%; height: 100%; object-fit: cover; transition: filter 0.3s ease; }
+.art-card:hover img { filter: brightness(0.7); }
+
+.art-tooltip {
+    position: absolute;
+    bottom: 15px; left: 15px; right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-main);
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: flex; justify-content: space-between; align-items: center;
+    opacity: 0; transform: translateY(10px);
+    transition: all 0.3s ease; pointer-events: none;
+}
+
+.art-card:hover .art-tooltip { opacity: 1; transform: translateY(0); }
+.art-tooltip .medium { font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+.art-tooltip .date { font-family: var(--font-body); font-size: 0.7rem; opacity: 0.7; background: var(--color-work); color: var(--text-work); padding: 3px 6px; border-radius: 4px; }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .art-card { width: 200px; height: 260px; }
+}
+

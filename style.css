@@ -303,11 +303,11 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s ease; }
 
 /* 3. Animation Directions */
 .scroll-left {
-    animation: scroll-left 35s linear infinite;
+    animation: scroll-left 45s linear infinite;
 }
 
 .scroll-right {
-    animation: scroll-right 35s linear infinite;
+    animation: scroll-right 45s linear infinite;
 }
 
 /* Pause EITHER row on hover */
@@ -316,27 +316,24 @@ a { text-decoration: none; color: inherit; transition: opacity 0.2s ease; }
 }
 
 /* --- KEYFRAMES --- */
-
-/* --- UPDATED KEYFRAMES --- */
-
+/* --- UPDATED FOR 2 SETS (12 IMAGES TOTAL) --- */
 @keyframes scroll-left {
     0% {
         transform: translateX(0);
     }
     100% {
-        /* Move exactly one set length to the left */
-        /* With 3 sets, one set is 100% / 3 = 33.333% */
-        transform: translateX(-33.333%);
+        /* Move exactly half the total width (the length of one original set) */
+        transform: translateX(-50%);
     }
 }
 
 @keyframes scroll-right {
     0% {
-        /* Start at -33.33% (Showing the middle set) */
-        transform: translateX(-33.333%);
+        /* Start halfway (showing the duplicate set) */
+        transform: translateX(-50%);
     }
     100% {
-        /* Move right to 0 (Showing the first set) */
+        /* Move right to the start (showing the original set) */
         transform: translateX(0);
     }
 }

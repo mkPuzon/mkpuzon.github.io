@@ -12,7 +12,7 @@ def optimize_images():
         os.makedirs(OUTPUT_FOLDER)
         print(f"Created folder: {OUTPUT_FOLDER}")
 
-    supported_formats = ('.jpg', '.jpeg', '.png', '.tiff', '.bmp')
+    supported_formats = ('.jpg', '.jpeg', '.png', '.tiff', '.bmp', '.heic')
     files = [f for f in os.listdir(INPUT_FOLDER) if f.lower().endswith(supported_formats)]
     
     if not files:

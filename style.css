@@ -115,7 +115,7 @@ ul {
 .logo {
     font-family: var(--font-head);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.8rem;
     letter-spacing: -0.3px;
     line-height: 1.2;
     color: var(--accent);
@@ -390,6 +390,10 @@ ul {
 /* =========================================================
    SECTION: PROJECTS
    ========================================================= */
+#projects {
+    background-color: var(--bg-alt);
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

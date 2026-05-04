@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madelyn Puzon | AI & CS</title>
     <link rel="icon" type="image/png" href="assets/EpauletteSpace.png">
-    <link rel="apple-touch-icon" href="assets/EpauletteSpace.png">  
+    <link rel="apple-touch-icon" href="assets/EpauletteSpace.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,218 +13,248 @@
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">Madelyn Puzon</div>
+        <a href="#" class="logo">Madelyn Puzon</a>
         <div class="nav-links">
-            <div class="social-icons">
-                <a href="https://github.com/mkPuzon" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                <a href="https://www.linkedin.com/in/madelyn-puzon/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                <a href="mailto:madelynkpuzon@gmail.com?"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+            <div class="nav-section-links">
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="art.html">Art</a>
+            </div>
+            <div class="nav-social-links">
+                <a href="https://github.com/mkPuzon" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/madelyn-puzon/" target="_blank">LinkedIn</a>
+                <a href="mailto:madelynkpuzon@gmail.com">Email</a>
             </div>
         </div>
     </nav>
 
-    <main class="bento-grid">
-        
-        <div class="card cat-about w-2 h-3">
-            <h1>Building the mind of the machine</h1>
-            <p>
-                I’m an AI Research Assistant and student based on the U.S. East Coast. My work spans large language model optimization, RAG pipelines, DCNN architecture design, and deploying applications using Docker and FastAPI.
-            </p>
-            <div class="status-pill">
-                <span class="dot"></span> Open to Work (USA)
+    <!-- HERO -->
+    <section id="hero" class="section-hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1 class="hero-headline">Building the mind<br>of the machine</h1>
+                <p class="hero-bio">I'm an AI Research Assistant and student based on the U.S. East Coast. My work spans large language model optimization, RAG pipelines, DCNN architecture design, and deploying applications using Docker and FastAPI.</p>
+                <div class="status-pill">
+                    <span class="dot"></span> Open to Work (USA)
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="assets/pfp2.jpg" alt="Madelyn Puzon">
             </div>
         </div>
+    </section>
 
-        <div class="card photo-card w-1 h-3">
-            <img src="assets/pfp2.jpg" alt="Profile">
-        </div>
-
-        <div class="card cat-extra focus-card w-1 h-3">
-            <h3>Currently working on...</h3>
-            <p>➤ Building an end-to-end customer churn predictor involving data processing, model training, and deployment using AWS (<a href="https://github.com/mkPuzon/customer-churn-models">repo</a>)</p>
-            <br>
-            <!-- <p>> Reading and working through Hands-On Machine Learning with Scikit-Learn and TensorFlow by Aurélien Géron.</p> -->
-            <div class="mini-icon">❯❯❯❯</div>
-        </div>
-
-
-        <div class="card cat-work h-2 w-2" id="work">
-            <div class="work-header">
-                <h3>Education</h3>
-                <span class="year">Aug 2022 - May 2026</span>
-            </div>
-            <h2>Colby College</h2>
-            <p>Double major in Computer Science: AI concentration & Philosophy</p>
-        </div>
-
-        <div class="card cat-extra h-2 w-2" id="stack">
-            <h3>Skills</h3>
-            <ul class="skill-list">
-                <li>Python</li>
-                <li>SQL</li>
-                <li>TensorFlow</li>
-                <li>DCNNs</li>
-                <li>Docker</li>
-                <li>FastAPI</li>
-                <li>PostgreSQL</li>
-                <li>RAG</li>
-                <li>Fine-tuning</li>
-                <li>Ollama</li>
-                <li>Hugging Face Transformers</li>
-                <li>WSL/Linux</li>
-            </ul>
-        </div>
-
-        <!-- S.A.M. -->
-        <div class="card cat-project w-2 h-8" id="projects">
-            <div class="work-header">
-                <h2>PROJECT</h2>
-                <span class="year">2025</span>
-            </div>
-            <div class="card-image-wrapper">
-                <img src="assets/SAM.png" alt="Code Project">
-            </div>
-            
-            <div class="card-content">
-                <h2>Microservice Logging and Analytics</h2>
-                <p>A production-ready microservice for real-time sentiment analysis, complete with an analystics dashboard and persistant interaction database.</p>
-                <br>
-                <p>The system is composed of three main containerized services (the API, persistant database, Streamlit dashboard) orchestrated by Docker Compose (<a href="https://github.com/mkPuzon/sentiment-analysis-microservice">repo</a>).</p>
-                <br>
-                <div class="tags">
-                    <span>Python</span>
-                    <span>FastAPI</span>
-                    <span>PostgreSQL</span>
-                    <span>Docker</span>
-                    <span>Hugging Face</span>
+    <!-- HIGHLIGHTS -->
+    <section class="section-alt">
+        <div class="section-inner">
+            <div class="highlights-grid">
+                <div class="highlight-card" id="skills">
+                    <span class="highlight-label">Skills</span>
+                    <ul class="skill-tags">
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>C</li>
+                        <li>TensorFlow</li>
+                        <li>DCNNs</li>
+                        <li>RNNs</li>
+                        <li>FastAPI</li>
+                        <li>PostgreSQL</li>
+                        <li>RAG</li>
+                        <li>Fine-tuning</li>
+                        <li>Ollama</li>
+                        <li>Docker</li>
+                        <li>WSL / Linux</li>
+                        <li>Hugging Face Transformers</li>
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <span class="highlight-label">Currently working on</span>
+                    <p>Building a self-updating research tool to track trends in AI literature -> <a href="#">repo</a></p>
+                    <p>Building a custom neural network library from scratch in C -> <a href="#">repo</a></p>
+                    <p></p>
+                    <div class="highlight-arrow">❯❯❯❯</div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- DAI RA Work -->
-        <div class="card cat-work w-2 h-7" id="work">
-            <div class="work-header">
-                <h3>Work Experience</h3>
-                <span class="year">2024-PRESENT</span>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-eyebrow">Selected Work</span>
+                <h2 class="section-title">Projects</h2>
             </div>
-            
-            <div class="card-image-wrapper">
-                <img src="assets/research.png" alt="Code Project">
-            </div>
+            <div class="projects-grid">
 
-            <h2>Davis Institute Research Assistant & Tutor</h2>
-            <p>➤ Engineered private AI solutions through fine-tuning and RAG, optimizing open-source LLMs for accurate content filtering in applied research settings, improving accuracy by 45%.</p>
-            <p>➤ Conducted and presented independent research on embedding algorithms, retrieval augmented generation, and local fine-tuning methods. </p>
-            <p>➤ Served as a technical consultant to cross-disciplinary partners (Economics, Philosophy, CS), translating complex technical capabilities into practical research applications and policy guidelines.</p>
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/SAM.png" alt="Sentiment Analysis Microservice">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta">
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3 class="project-card-title">Microservice Logging and Analytics</h3>
+                        <p>A production-ready microservice for real-time sentiment analysis, complete with an analytics dashboard and persistent interaction database. Three containerized services orchestrated by Docker Compose (<a href="https://github.com/mkPuzon/sentiment-analysis-microservice">repo</a>).</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>PostgreSQL</span>
+                            <span>Docker</span>
+                            <span>Hugging Face</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/auraLogo.png" alt="AURA research analytics tool">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta">
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3 class="project-card-title">Self-Updating AI Research Analytics Tool</h3>
+                        <p>A self-updating glossary that automates analysis of academic papers through an end-to-end data pipeline. Fetches papers from arXiv, processes their text, and prepares data for further analysis (<a href="https://github.com/mkPuzon/AURA-Self-Updating-Research-Tool">repo</a>).</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Data Pipelines</span>
+                            <span>PostgreSQL</span>
+                            <span>Local LLMs</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card-image">
+                        <img src="assets/gallery_opt/art_thumbnails.webp" alt="Art and design portfolio">
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-meta">
+                            <span class="project-year">2018 – Present</span>
+                        </div>
+                        <h3 class="project-card-title">Art & Design</h3>
+                        <p>When I'm not programming I enjoy photography and making art. I take on paid illustration and design commissions and have sold in-person at the Elm City Small Press Fest. <a href="art.html">See more →</a></p>
+                        <div class="tags">
+                            <span>Photography</span>
+                            <span>Digital Art</span>
+                            <span>Watercolor</span>
+                            <span>Blacksmithing</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </div>
+    </section>
 
-        <!-- AURA -->
-        <div class="card cat-project w-2 h-8" id="projects">
-            <div class="work-header">
-                <h2>PROJECT</h2>
-                <span class="year">2025</span>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section-alt">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-eyebrow">Background</span>
+                <h2 class="section-title">Experience</h2>
             </div>
-            <div class="card-image-wrapper">
-                <img src="assets/auraLogo.png" alt="Code Project">
-            </div>
-            
-            <div class="card-content">
-                <h2>Self-Updating AI Research Analytics Tool</h2>
-                <p>A self-updating glossary that automates the analysis of academic papers through an end-to-end data pipleine.</p>
-                <br>
-                <p>The system fetches the latest papers from arXiv, processes their text, and prepares data for further analysis and display (<a href="https://github.com/mkPuzon/AURA-Self-Updating-Research-Tool">repo</a>).</p>
-                <br>
-                <div class="tags">
-                    <span>Python</span>
-                    <span>Data Pipelines</span>
-                    <span>PostgreSQL</span>
-                    <span>Local LLMs</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- OWLab RA Work -->
-        <div class="card cat-work w-2 h-6" id="work">
-            <div class="work-header"
-                <h3>Work Experience</h3>
-                <span class="year">2024-2025</span>
-            </div>
-            <div class="card-image-wrapper">
-                <img src="assets/research2.png" alt="Code Project">
-            </div>
-            <h2>OWLab Research Assistant</h2>
-            <p>➤ Architected and trained deep learning models (DCNNs, ARTFLOW) in TensorFlow to model primate visual mechanisms, identifying key computational trends that outperformed baseline models by 25%.</p>
-            <p>➤ Extended a custom DCNN library built on Tensorflow (>10,000 lines) to process and train highly customizable ML models on sequential data.</p>
-            <p>➤ Designed, evaluated, and conducted Unity-based (C#) experiments for data collection across 50+ participants.</p>
-        </div>
 
-        <!-- Where I've Worked -->
-        <div class="card cat-about w-2 h-3">
-            <h1>Where I've Worked</h1>
-            <p>✦ The <a href="https://davisinstituteai.colby.edu/">Davis Institute for Artificial Intelligence</a> is the first institute for artificial intelligence at a small liberal arts college. Our mission is to cultivate AI innovation for good through interdisciplinary research and education opportunities.</p>
-            <p>✦ At the <a href="https://sites.google.com/colby.edu/owlab/home">Optic Flow and Wayfinding Lab (OWLab)</a>, we build neural models and perform experiments that link perception, action, and behavior with the brain, with a focus on human navigation.</p>
-        </div>
-
-        <!-- CS Department Teaching Assistant-->
-        <div class="card cat-work w-2 h-5" id="work">
-            <div class="work-header">
-                <h3>Work Experience</h3>
-                <span class="year">2023-2025</span>
-            </div>
-            <h2>CS Department Teaching Assistant</h2>
-            <p>➤ Partnered with faculty to iteratively refine course materials, translating observed trends in student performance into targeted updates for lab assignments and lecture content.</p>
-            <p>➤ Facilitated weekly TA hours to help students learn CS concepts and debug code, providing them with a deeper understanding of course materials and independent problem-solving frameworks.</p>
-            <p>➤ Evaluated complex programming assignments for 78 students across three academic terms, maintaining a rigorous feedback loop for the course’s primary technical assessments.</p>
-        </div>
-
-
-        <!-- ARTWORK -->
-        <div class="card cat-project w-2 h-6" id="projects">
-            <div class="work-header">
-                <h2>Projects</h2>
-                <span class="year">2018-Present</span>
-            </div>
-            <div class="card-image-wrapper">
-                <img src="assets/gallery_opt/art_thumbnails.webp" alt="Code Project">
-            </div>
-            
-            <div class="card-content">
-                <h2>Art & Design</h2>
-                <p>When I'm not programming I enjoy photography and making art. I take on paid illustration and design commissions through referrals and I've sold in-person at the Elm City Small Press Fest.</p>
-                <br>
-                <p>Check out more <a href="art.html">here</a>.</p>
-                <br>
-                <div class="tags">
-                    <span>Photography</span>
-                    <span>Painting</span>
-                    <span>Blacksmithing</span>
+            <!-- Education -->
+            <div class="exp-entry">
+                <div class="exp-date-badge">Aug 2022 –<br>May 2026</div>
+                <div class="exp-body">
+                    <span class="exp-type-label">Education</span>
+                    <h3 class="exp-title">Colby College</h3>
+                    <p class="exp-description">Double major in Computer Science: AI concentration &amp; Philosophy</p>
                 </div>
             </div>
 
+            <!-- Davis Institute RA -->
+            <div class="exp-entry">
+                <div class="exp-date-badge">2024 – Present</div>
+                <div class="exp-body">
+                    <span class="exp-type-label">Work Experience</span>
+                    <h3 class="exp-title">Davis Institute AI Research Assistant</h3>
+                    <!-- <div class="exp-image">
+                        <img src="assets/research.png" alt="Davis Institute AI research">
+                    </div> -->
+                    <ul class="exp-bullets">
+                        <li>Engineered private AI solutions through fine-tuning and RAG, optimizing open-source LLMs for accurate content filtering in applied research settings, improving accuracy by 45%.</li>
+                        <li>Conducted and presented independent research on embedding algorithms, retrieval augmented generation, and local fine-tuning methods.</li>
+                        <li>Served as a technical consultant to cross-disciplinary partners (Economics, Philosophy, CS), translating complex technical capabilities into practical research applications and policy guidelines.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- OWLab RA -->
+            <div class="exp-entry">
+                <div class="exp-date-badge">2024 – 2025</div>
+                <div class="exp-body">
+                    <span class="exp-type-label">Work Experience</span>
+                    <h3 class="exp-title">OWLab Research Assistant</h3>
+                    <!-- <div class="exp-image">
+                        <img src="assets/research2.png" alt="OWLab research">
+                    </div> -->
+                    <ul class="exp-bullets">
+                        <li>Architected and trained deep learning models (DCNNs, ARTFLOW) in TensorFlow to model primate visual mechanisms, identifying key computational trends that outperformed baseline models by 25%.</li>
+                        <li>Extended a custom DCNN library built on TensorFlow (&gt;10,000 lines) to process and train highly customizable ML models on sequential data.</li>
+                        <li>Designed, evaluated, and conducted Unity-based (C#) experiments for data collection across 50+ participants.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CS Teaching Assistant -->
+            <div class="exp-entry">
+                <div class="exp-date-badge">2023 – 2025</div>
+                <div class="exp-body">
+                    <span class="exp-type-label">Work Experience</span>
+                    <h3 class="exp-title">CS Department Teaching Assistant</h3>
+                    <ul class="exp-bullets">
+                        <li>Partnered with faculty to iteratively refine course materials, translating observed trends in student performance into targeted updates for lab assignments and lecture content.</li>
+                        <li>Facilitated weekly TA hours to help students learn CS concepts and debug code, providing them with a deeper understanding of course materials and independent problem-solving frameworks.</li>
+                        <li>Evaluated complex programming assignments for 78 students across three academic terms, maintaining a rigorous feedback loop for the course's primary technical assessments.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <!-- More Information -->
-        <div class="card cat-extra h-3 w-2" id="stack">
-            <h2>AI Beyond Programming</h2>
-            <p>✦ My work at the Davis Institute for Artificial Intelligence was featured in Colby's second issue of the Journal of Writing With and About AI; you can find the whole thing <a href="https://www.flipsnack.com/99B9EC66AED/jwai-issue2-v2">here.</a></p>
-            <p>✦ As a student leader, I've been interviewed for a couple articles about Colby's Institute for Artificial Intelligence; check them out <a href="https://www.govtech.com/education/higher-ed/colby-college-builds-ai-literacy-with-portal-for-comparing-chatbots">here</a> and <a href="https://news.colby.edu/story/a-lively-conversation-about-ai/">here</a>.</p>
+    <!-- MORE -->
+    <section id="more" class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-eyebrow">Background</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+
+            <!-- Where I've Worked -->
+            <div class="where-worked-card">
+                <h3>Where I've Worked</h3>
+                <p>The <a href="https://davisinstituteai.colby.edu/">Davis Institute for Artificial Intelligence</a> is the first institute for artificial intelligence at a small liberal arts college. Our mission is to cultivate AI innovation for good through interdisciplinary research and education opportunities.</p>
+                <p>At the <a href="https://sites.google.com/colby.edu/owlab/home">Optic Flow and Wayfinding Lab (OWLab)</a>, we build neural models and perform experiments that link perception, action, and behavior with the brain, with a focus on human navigation.</p>
+            </div>
+
+            <!-- AI Beyond Programming -->
+            <div class="where-worked-card" style="margin-top: 16px;">
+                <h3>AI Beyond Programming</h3>
+                <p>As a student leader, I've been interviewed for a couple articles about Colby's Institute for Artificial Intelligence; check them out <a href="https://www.govtech.com/education/higher-ed/colby-college-builds-ai-literacy-with-portal-for-comparing-chatbots">here</a> and <a href="https://news.colby.edu/story/a-lively-conversation-about-ai/">here</a>.</p>
+                <p>My work at the Davis Institute for Artificial Intelligence was featured in Colby's second issue of the Journal of Writing With and About AI; you can find it <a href="https://www.flipsnack.com/99B9EC66AED/jwai-issue2-v2">here</a>.</p>
+            </div>
+
         </div>
+    </section>
 
-    </main>
-
-    
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="site-footer" id="contact">
         <div class="footer-content">
             <h3>Get in Touch</h3>
             <div class="social-icons">
-                <a href="https://github.com/mkPuzon" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                <a href="https://www.linkedin.com/in/madelyn-puzon/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                <a href="mailto:madelynkpuzon@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                <a href="https://github.com/mkPuzon" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                <a href="https://www.linkedin.com/in/madelyn-puzon/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                <a href="mailto:madelynkpuzon@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
             </div>
-            <p class="copyright">© 2025 Madelyn Puzon</p>
+            <p class="copyright">© 2026 Madelyn Puzon</p>
         </div>
     </footer>
 

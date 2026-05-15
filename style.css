@@ -112,6 +112,16 @@ ul {
     padding: 36px 24px;
 }
 
+    .navbar p {
+        font-weight: 600;
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        letter-spacing: 0.02em;
+        padding: 4px 0;
+        transition: color 0.2s ease;
+    }
+
 .logo {
     font-family: var(--font-head);
     font-weight: 700;

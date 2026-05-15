@@ -115,7 +115,7 @@ ul {
 .logo {
     font-family: var(--font-head);
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     letter-spacing: -0.3px;
     line-height: 1.2;
     color: var(--accent);
@@ -147,7 +147,7 @@ ul {
 .nav-section-links a {
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 1.35rem;
     color: var(--text-muted);
     letter-spacing: 0.02em;
     padding: 4px 0;

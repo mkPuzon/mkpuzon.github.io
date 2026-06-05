@@ -1,5 +1,5 @@
 # My Personal Website
 ## Get in Touch!
-**Email**: madelynkpuzon@gmail.com
+**Email**: cadell-puzon@protonmail.com
 
 **LinkedIn**: https://www.linkedin.com/in/madelyn-puzon/

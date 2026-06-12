@@ -10,7 +10,8 @@
     --accent: #8B7EC8;       
 
     --header-font: 'montserrat';
-    --body-font: 'Inter', sans-serif;
+    --body-font: 'inter';
+    --link-font: 'inter';
     --accent-font: 'doto';
 }
 
@@ -37,6 +38,18 @@ body.light-mode {
     src: url('_assets/fonts/montserrat.ttf')
         format('truetype');
     font-weight: 800;
+}
+@font-face {
+    font-family: 'inter';
+    src: url('_assets/fonts/inter.ttf')
+        format('truetype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'space_grotesk';
+    src: url('_assets/fonts/space_grotesk.ttf')
+        format('truetype');
+    font-weight: 300;
 }
 
 * {
@@ -89,6 +102,11 @@ p {
     margin-bottom: 16px;
 }
 
+a {
+    font-family: var(--link-font);
+}
+
+
 ul, li {
     font-family: var(--body-font);
     font-size: 1.0rem;
@@ -99,6 +117,12 @@ ul, li {
     margin: 0 auto;
 }
 
+.linebreak {
+    display: block;
+    height: 8px;
+    background-color: var(--main);
+}
+
 .hero {
     display: flex;
     align-items: center;
@@ -107,12 +131,20 @@ ul, li {
 }
     .hero img {
         max-width: 200px;
+        border: 0.5rem solid;
         border-radius: 40px;
+        border-color: var(--main);
     }
     .hero h1 {
         font-size: 3.0rem;
         padding-left: 4px;
     }
+
+footer {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
 
 .skills {
     display: flex;
@@ -141,12 +173,18 @@ ul, li {
     .section h1 {
         font-size: 2.0rem;
     }
+    .section h2 {
+        font-family: 'space_grotesk';
+    }
     .section ul {
         color: var(--tx);
         padding: 0 32px;
         margin-bottom: 16px;
         color: var(--tx-2);
     }
+        .section ul li {
+            padding: 8px 0;
+        }
         .section ul li::marker {
             content: '➤ ';
             font-size: 16px;
@@ -172,6 +210,9 @@ header {
         font-size: 1.8rem;
         color: var(--main);
         font-family: var(--accent-font);
+    }
+    header a {
+        font-family: var(--body-font)
     }
 
 nav {

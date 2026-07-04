@@ -203,7 +203,8 @@ nav ul {
 footer {
     text-align: center;
     margin-top: 32px;
-    margin-bottom: 32px;
+    margin-bottom: 32px; 
+    
 }
     footer .social-icons a:hover {
         color: var(--accent);
@@ -303,7 +304,39 @@ footer {
 }
     .project:hover {
         border: 2px solid var(--accent);
-        transform: rotate(3deg);
+        transform: rotate(1deg);
+
+        z-index: 10;
+    }
+
+.featured-project {
+    border: 2px solid var(--tx-2);
+    min-height: 15vh;
+    padding: 8px;
+    margin: 16px 0;
+    height: 100%;
+}
+    .featured-project h3 {
+        color: var(--main);
+    }
+    .featured-project h4 {
+        color: var(--tx);
+    }
+    .featured-project p {
+        color: var(--tx-2);
+    }
+    .featured-project a {
+        text-decoration: none;
+    }
+    .featured-project h5 {
+        font-family: var(--header-font);
+        color: var(--tx-2);
+        padding-top: 4px;
+    }
+
+    .featured-project:hover {
+        border: 2px solid var(--accent);
+        transform: rotate(-1deg);
 
         z-index: 10;
     }

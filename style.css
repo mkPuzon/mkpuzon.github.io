@@ -303,6 +303,30 @@ nav {
                 color: var(--accent);
             }
 
+.img-grid {
+    display: grid;
+    gap: 16px;
+    
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    overflow-x: hidden;
+    margin: 32px 0;
+}
+    .img-grid img {
+        max-width: 344px;
+        height: auto;
+
+    }
+
+.featured-img {
+    max-width: inherit;
+    overflow-x: hidden;
+}
+    .featured-img img {
+        max-width: inherit;
+    }
+
 .mode {
     position: fixed;
     bottom: 2vw;

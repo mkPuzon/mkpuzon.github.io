@@ -16,6 +16,8 @@
 
     --cursor-main: url("_assets/cursor_main.png"), default;
     --cursor-hover: url("_assets/cursor_hover.png"), default;
+
+    --content-width: 688px;
 }
 
 body.light-mode {
@@ -90,6 +92,7 @@ body {
     background-color: var(--bg);
     margin: 0px;
     padding: 0px;
+    padding-top: 80px; /* adjust for navbar */
 }
 
 h1 {
@@ -121,8 +124,55 @@ ul, li {
     font-size: 1.0rem;
 }
 
+header {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 50px;
+    width: 738px;
+    max-width: calc(100% - 32px);
+    padding: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--bg);
+
+    z-index: 1000;
+}
+    header h2 {
+        font-size: 1.8rem;
+        color: var(--main);
+        font-family: var(--accent-font);
+    }
+    header a {
+        font-family: var(--body-font)
+    }
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.0rem;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    color: var(--tx);
+    font-family: var(--accent-font);
+}
+    nav ul a {
+        text-decoration: none;
+    }
+    nav ul a:hover {
+        color: var(--accent);
+    }
+
 .container {
-    max-width: 688px;
+    max-width: var(--content-width);
     margin: 0 auto;
 }
 
@@ -258,51 +308,6 @@ footer {
         z-index: 10;
     }
 
-header {
-    position: sticky;
-    top: 0px;
-    background-color: var(--bg);
-
-    padding-top: 16px;
-    padding-bottom: 16px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-    header h2 {
-        font-size: 1.8rem;
-        color: var(--main);
-        font-family: var(--accent-font);
-    }
-    header a {
-        font-family: var(--body-font)
-    }
-
-nav {
-    position: sticky;
-    overflow: hidden;
-    top: 0;
-}
-    nav ul {
-        color: var(--tx);
-        list-style-type: none;
-        font-family: var(--accent-font);
-    }
-        nav ul li {
-            float: right;
-            
-        }
-            nav ul li a {
-                display: block;
-                padding: 12px 16px;
-                text-decoration: none;
-            }
-            nav ul li a:hover {
-                color: var(--accent);
-            }
-
 .img-grid {
     display: grid;
     gap: 16px;
@@ -324,7 +329,7 @@ nav {
     overflow-x: hidden;
 }
     .featured-img img {
-        max-width: inherit;
+        max-width: var(--content-width);
     }
 
 .mode {

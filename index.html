@@ -14,12 +14,13 @@
     <div class="container">
 
         <header>
-            <h2>Cade Puzon</h2>
+            <h2 title="(Madelyn Puzon)">Cade Puzon</h2>
             <nav>
                 <ul>
-                    <li><a href="index.html">CONTACT</a></li>
-                    <li><a href="index.html">PROJECTS</a></li>
-                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="index.html#education">EDUCATION</a></li>
+                    <li><a href="index.html#projects">PROJECTS</a></li>
+                    <li><a href="index.html#work">WORK</a></li>
                 </ul>
             </nav>
         </header>
@@ -34,7 +35,7 @@
         <!-- SUMMARY -->
         <div class="section">
             <p>I build end-to-end AI systems covering data pipelines, APIs, fine-tuning LLMs, and system deployment. I have research experience in neural network architecture design and LLM optimization for local inference.</p>
-            <p>After graduating this spring with a double major in CS:AI and Philosophy, I'm working full time in a 1 year Post-Bacc role at the <a href="https://davisinstituteai.colby.edu/">Davis Institute for Artificial Intelligence</a>.</p>
+            <p>After graduating this spring with a double major in <b>CS:AI</b> and <b>Philosophy</b>, I'm working full time in a 1 year Post-Bacc role at the <a href="https://davisinstituteai.colby.edu/">Davis Institute for Artificial Intelligence</a>.</p>
         </div>
         
 
@@ -48,54 +49,118 @@
             
             <div class="skills-card">
                 <h2>AI/ML</h2>
-                <p>TensorFlow, PyTorch, scikit-learn, Ollama, DCNNs, RNNs, RAG, fine-tuning</p>
+                <p>TensorFlow, PyTorch, scikit-learn, vLLM, LiteLLM, Ollama, Hugging Face, DCNNs, RNNs, RAG, fine-tuning</p>
             </div>
 
             <div class="skills-card">
                 <h2>Dev Tools</h2>
-                <p>Git/GitHub, Docker, FastAPI, PostgreSQL, Claude Code, Hermes, Linux</p>
+                <p>Git/GitHub, Docker, tmux, FastAPI, PostgreSQL, Claude Code, Hermes</p>
             </div>
         </div>
 
+        <div class="aside">
+            <p>I regularly program on macOS, Windows 11, and Linux (Fedora 44 & WSL). Thank goodness for containers and dotfiles.</p>
+            <br/>
+        </div>
+
+        <div class="linebreak"></div>
+
         <!-- WORK EXPERIENCE -->
-        <div class="section">
+        <div class="section" id="work">
             <h1>Professional Experience</h1>
-            <p>I've held consistent employment since age 15. My current job focuses on building and deploying AI-power tools for educational institutions:</p>
+            <p>Hired as a CS teaching assistant after my first semester in college, I've since held research and engineering roles continuously: from two years of computational neuroscience research in the OWLab to independent LLM-based research at the Davis Institute, where I'm currently a fellow.</p>
+            <br/>
+            
+            <h2>5th Year Fellow for The Davis Institute for AI</h2>
             <ul>
                 <li style="color: var(--tx);">
-                    <strong>5th Year Fellow (Davis Institute for AI):</strong>
+                    LLM Inference Infrastructure: Supported deployment of locally hosted LLMs using vLLM on NVIDIA GPU hardware for campus-wide access; conducted endpoint validation and throughput benchmarking via GuideLLM sweep tests to characterize production serving capacity.
                 </li>
-                <li>
-                    <strong>AI Research Assistant (2024-2026):</strong> Engineered private RAG solutions and optimized open-source LLMs using Python to improve content filtering accuracy by 45%.
-                </li>
-                <li>
-                    <strong>ML Research Assistant (2024-2025):</strong> Architected and trained Deep Convolutional Neural Networks (DCNNs) and ARTFLOW models to simulate primate visual mechanisms.
-                </li>
-                <li>
-                    <strong>CS Teaching Assistant (2023-2025):</strong> Mentored students in debugging complex code and partnered with faculty to refine curriculum based on student performance trends.
+                <li style="color: var(--tx);">
+                    RAG Application Development: Built a retrieval-augmented chatbot for semantic search over a digitized, unstructured student newspaper archive; currently architecting migration from OpenAI API + managed vector store to a fully local inference and retrieval stack.
                 </li>
             </ul>
-            <a href="https://linkedin.com/in/cade-puzon" class="learn-more">See my full work history and resume &rarr;</a>
+
+            <h2 style="color: var(--tx-2);">AI Research Assistant (2024-2026):</h2>
+            <ul>
+                <li>Engineered private RAG solutions for consumer hardware and optimized open-source LLMs to significantly improve guardian model content filtering accuracy.</li>
+            </ul>
+
+            <h2 style="color: var(--tx-2);">Machine Learning Researcher (2024-2026):</h2>
+            <ul>
+                <li>Architected DCNNs and RNNs to explore computationally important components of primate heading perception mechanisms.</li>
+            </ul>
+
+            <h2 style="color: var(--tx-2);">CS Teaching Assistant (2023-2025)</h2>
+            <ul>
+                <li>Mentored students in debugging complex code and partnered with faculty to refine curriculum based on student performance trends.</li>
+            </ul>
+
+            <h2><a href="https://linkedin.com/in/cade-puzon" class="learn-more">See full work history and resume &rarr;</a></h2>
+            
+
         </div>
 
         <div class="linebreak"></div>
 
         <!-- PROJECTS -->
-        <div class="section">
-            <h1>Project Portfolio</h1>
+        <div class="section" id="projects">
+            <h1>Featured Project Portfolio</h1>
 
+            <div class="project-grid">
+
+                <a href="https://github.com/mkPuzon/SAGE" class="project-link">
+                <div class="project">
+                    <h3>SAGE - A Self-updating AI Research Glossary for Education</h3>
+                    <h5>OCT '25 - PRESENT</h5>
+                    <p>A living glossary cataloguing bleeding-edge AI research with end-to-end data pipelines and LLM-powered data extration.</p>
+                </div>
+                </a>
+
+                <a href="https://github.com/mkPuzon/echo-bot" class="project-link">
+                <div class="project">
+                    <h3>EchoBot - Secure RAG for Archival Search</h3>
+                    <h5>MAR '26 - JUN '26</h5>
+                    <p>A chatbot leveraging a custom LLM inference system utilizing a guardian model and vector database. Options for both API-based and local inference.</p>
+                </div>
+                </a>
+
+                <a href="https://github.com/mkPuzon/sentiment-analysis-microservice">
+                <div class="project">
+                    <h3>Sentiment Analysis Microservice</h3>
+                    <h5>NOV '25 - DEC '25</h5>
+                    <p>ML pipeline from model inference to data persistence and visualization using FastAPI, Hugging Face Transformers, PostgreSQL, and Docker.</p>
+                </div>
+                </a>
+
+                <!-- <a href=""> -->
+                <div class="project">
+                    <h3>DCNN + RNN Model Library</h3>
+                    <h5>MAY '25 - AUG '25</h5>
+                    <p>TensorFlow-based custom neural net design library for building, training, and testing models for heading perception tasks.</p>
+                </div>
+                <!-- </a> -->
+
+            </div>
+
+            <br>
+
+            <h2><a href="https://github.com/mkPuzon" class="learn-more">Full project code & details on GitHub &rarr;</a></h2>
         </div>
 
         <div class="linebreak"></div>
 
         <!-- EDUCATION -->
-        <div class="section">
+        <div class="section" id="education">
             <h1>Education</h1>
             <h2>Colby College ('22-'26)</h2>
-            <p>BA in Computer Science: AI concentration & Philosophy</p>
+            <p>B.A. in Computer Science: AI concentration & Philosophy</p>
             <ul>
                 <li><strong>Relevant Coursework</strong>: Neural Networks, Deep Learning, Statistics & Data Science, Mathematical Data Analysis & Visualization, Linear Algebra, Multi-Variable Calculus, Computing Ethics, AI & Human Values, Bio-Inspired Machine Learning</li>
+                <li>I've presented my work five times across two undergraduate research venues, including <a href="https://www.colby.edu/academics/research/colby-liberal-arts-symposium/">CLAS</a>, the largest undergraduate research symposium of any liberal arts college in the country. </li>
                 <li>Awarded the Philosophy department's 2026 Stephen Coburn Pepper Prize for best graduating major in recognition of outstanding philosophical work.</li>
+                <li>As a student leader, I've been featured in a couple of articles about Colby's Institute for Artificial Intelligence; check them out <a href="https://www.govtech.com/education/higher-ed/colby-college-builds-ai-literacy-with-portal-for-comparing-chatbots">here</a> and <a href="https://news.colby.edu/story/a-lively-conversation-about-ai/">here</a>.</li>
+                <li>My work at the Davis Institute for Artificial Intelligence was featured in Colby's second issue of the <a href="https://www.jstor.org/stable/community.41701172">Journal of Writing With and About AI</a>.</li>
             </ul>
         </div>
 
@@ -105,10 +170,10 @@
         <div class="section">
             <h1>Miscelleneous</h1>
             <ul>
-                <li>This site was built with HTML/CSS by hand; no AI involved. I find building websites quite fun; I also have a site on neocities I update weekly.</li>
-                <li>I'm an artist as well as a programmer, check out <a href="#">some of my work</a> if that interests you.</li>
-                <li>My work at the Davis Institute for Artificial Intelligence was featured in Colby's second issue of the <a href="https://www.jstor.org/stable/community.41701172">Journal of Writing With and About AI</a>.</li>
-                <li>As a student leader, I've been interviewed for a couple of articles about Colby's Institute for Artificial Intelligence; check them out <a href="https://www.govtech.com/education/higher-ed/colby-college-builds-ai-literacy-with-portal-for-comparing-chatbots">here</a> and <a href="https://news.colby.edu/story/a-lively-conversation-about-ai/">here</a>.</li>
+                <li>This site was built with HTML/CSS/JS by hand; no AI involved. I find building websites a fun break from my normal engineering work. I also have a site on <a href="https://neocities.org/">neocities</a> I update weekly.</li>
+                <li>As a Philosophy major, reading and writing were—and today continues to be—a daily activity for me. Here's what I've been <a href="bookshelf.html">reading</a> lately.</li>
+                <li>I do 2D art and photography too, here's <a href="art.html">some of my work</a> if that interests you.</li>
+                <li>I also know how to blacksmith, check it out <a href="blacksmithing.html">here</a>.</li>
             </ul>
         </div>
 
@@ -118,7 +183,6 @@
             <div class="social-icons">
                 <a href="https://github.com/mkPuzon">GitHub</a>
                 <a href="https://www.linkedin.com/in/cade-puzon/">LinkedIn</a>
-                <a href="mailto:cadell-puzon@protonmail.com">Email</a>
             </div>
 
             <p class="copyright">© 2026 Cade Puzon</p>

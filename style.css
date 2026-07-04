@@ -13,6 +13,9 @@
     --body-font: 'inter';
     --link-font: 'inter';
     --accent-font: 'doto';
+
+    --cursor-main: url("_assets/cursor_main.png"), default;
+    --cursor-hover: url("_assets/cursor_hover.png"), default;
 }
 
 body.light-mode {
@@ -25,6 +28,9 @@ body.light-mode {
     --main: #5949a0;
     --main-hover: #8B7EC8;       
     --accent: #DA702C; 
+
+    --cursor-main: url("_assets/cursor_hover.png"), default;
+    --cursor-hover: url("_assets/cursor_main.png"), default;
 }
 
 @font-face {
@@ -55,6 +61,7 @@ body.light-mode {
 * {
     margin: 0px;
     padding: 0px;
+    cursor: var(--cursor-main);
 }
 
 html {
@@ -81,6 +88,8 @@ h1, h2, h3, p, a {
 
 body {
     background-color: var(--bg);
+    margin: 0px;
+    padding: 0px;
 }
 
 h1 {
@@ -145,6 +154,10 @@ footer {
     margin-top: 32px;
     margin-bottom: 32px;
 }
+    footer .social-icons a:hover {
+        color: var(--accent);
+        cursor: var(--cursor-hover);
+    }
 
 .skills {
     display: flex;
@@ -154,7 +167,7 @@ footer {
     .skills-card {
         padding: 16px;
         flex: 1 1 0;
-    }
+        }
         .skills-card h2 {
             font-family: var(--accent-font);
             font-size: 1.2rem;
@@ -169,12 +182,15 @@ footer {
 .section {
     margin-top: 32px;
     margin-bottom: 32px;
+
+    scroll-margin-top: 80px;
 }
     .section h1 {
         font-size: 2.0rem;
     }
     .section h2 {
         font-family: 'space_grotesk';
+        color: var(--main);
     }
     .section ul {
         color: var(--tx);
@@ -192,6 +208,53 @@ footer {
 
     .section a:hover {
         color: var(--accent);
+        cursor: var(--cursor-hover);
+    }
+    .section b {
+        color: var(--main);
+    }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+    .project-grid .project h3 {
+        color: var(--main);
+    }
+    .project-grid .project h4 {
+        color: var(--tx);
+    }
+    .project-grid .project p {
+        color: var(--tx-2);
+    }
+    .project-grid a {
+        text-decoration: none;
+    }
+    .project-grid h5 {
+        font-family: var(--header-font);
+        color: var(--tx-2);
+        padding-top: 4px;
+    }
+
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project {
+    border: 2px solid var(--tx-2);
+    min-height: 15vh;
+    padding: 8px;
+    box-sizing: border-box;
+    height: 100%;
+}
+    .project:hover {
+        border: 2px solid var(--accent);
+        transform: rotate(3deg);
+
+        z-index: 10;
     }
 
 header {
@@ -205,6 +268,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
     header h2 {
         font-size: 1.8rem;
@@ -249,16 +313,18 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--main-hover);
+    background: var(--main);
     color: var(--tx);
     border-radius: 16px;
 
-    cursor: pointer;
     user-select: none;
 
     transition: all 0.2s ease;
+
+    z-index: 100;
 }
     .mode:hover {
-        background: var(--main);
+        cursor: var(--cursor-hover);
+        background: var(--main-hover);
     }
 

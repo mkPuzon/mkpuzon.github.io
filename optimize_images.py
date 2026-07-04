@@ -3,7 +3,7 @@ from PIL import Image
 
 # ---- CONFIGURATION ---- #
 INPUT_FOLDER = './'         # original files here
-OUTPUT_FOLDER = 'assets/gallery_opt'    # save optimized files here
+OUTPUT_FOLDER = '_assets/images'    # save optimized files here
 MAX_SIZE = (800, 800)   # max width/height (preserves aspect ratio)
 QUALITY = 90            # 1-100
 
